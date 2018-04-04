@@ -176,3 +176,18 @@ const addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 };
+
+if(navigator.serviceWorker) {
+  navigator
+      .serviceWorker
+      .register('./sw.js')
+      .then(function() {
+        console.log('CLIENT: service worker registration complete.');
+      })
+      .catch(function(e) {
+        console.log('CLIENT: service worker registration failure.');
+        console.log(e);
+      });
+} else {
+  console.log('CLIENT: service worker is not supported.');
+}
