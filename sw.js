@@ -3,6 +3,7 @@ const version = 'v1_';
 const offlineCache = [
   './',
   'css/',
+  'img/',
   'js/'
 ];
 
