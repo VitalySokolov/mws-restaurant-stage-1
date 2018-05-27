@@ -3,14 +3,19 @@ let restaurants,
   cuisines;
 let map;
 var markers = [];
+// const dbHelper = new DBHelper();
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+  DBHelper.init(() => fetchRestaurants());
+});
+
+const fetchRestaurants = () => {
   fetchNeighborhoods();
   fetchCuisines();
-});
+};
 
 /**
  * Fetch all neighborhoods and set their HTML.
